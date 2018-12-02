@@ -28,6 +28,7 @@
                                 <th>Jam Selesai</th>
                                 <th>Tujuan</th>
                                 <th>Organisasi Terkait</th>
+                                <th>Status</th>
                                 {{-- <th>Status</th> --}}
                             </tr>
                             </thead>
@@ -45,6 +46,7 @@
                                     <td>{{$a->jam_selesai}}</td>
                                     <td>{{$a->tujuan}}</td>
                                     <td>{{$a->organisasi_terkait}}</td>
+                                    <td>{{$a->status}}</td>
                                     {{-- <td>{{$a->status}}</td> --}}
                                     <td>
                                         <!-- BUTTON EDIT-->

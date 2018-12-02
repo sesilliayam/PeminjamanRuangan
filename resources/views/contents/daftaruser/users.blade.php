@@ -21,6 +21,7 @@
                                                 <th>#</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
+                                                <th>Date Created</th>
                                                 {{-- <th>Password</th> --}}
                                                 <th>Action</th>
                                             </tr>
@@ -33,6 +34,7 @@
                                                 <td>{{($index++)+1}}</td>
                                                 <td>{{$a->name}}</td>
                                                 <td>{{$a->email}}</td>
+                                                <td>{{$a->created_at}}</td>
                                                 {{-- <td>{{$a->password}}</td> --}}
                                                 <td>
                                                     <!-- BUTTON EDIT-->

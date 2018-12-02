@@ -41,6 +41,7 @@
                                                 <td>{{$a->jurusan}}</td>
                                                 <td>{{$a->himpunan}}</td>
                                                 <td>{{$a->laboratorium_id}}</td>
+                                                <td>{{$a->created_at}}</td>
                                                 <td>
                                                     <!-- BUTTON EDIT-->
                                                         <div class="btn-group">
@@ -57,7 +58,7 @@
 
                                 <div class="form-group">
                                         <div class="col-sm-12">
-                                        <a href="{{route('mahasiswa.create')}}"><button class="btn btn-success">Tambah Mahasiswa</button></a>
+                                        <a href="{{route('mahasiswa.create')}}" class="btn btn-success">Tambah Mahasiswa</a>
                                         </div>
                                     </div>
 

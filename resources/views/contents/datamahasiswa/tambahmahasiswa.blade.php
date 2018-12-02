@@ -49,7 +49,7 @@
                                         <label class="col-sm-12">Kepengurusan Himpunan</label>
                                         <div class="col-sm-12">
                                             <select class="form-control form-control-line" name="himpunan" required>
-                                                <option value="-">-</option>
+                                                <option value="0">-</option>
                                                 <option value="HMSI">HMSI</option>
                                                 <option value="HMTI">HMTI</option>
                                             </select>
@@ -76,7 +76,7 @@
                                     
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <button class="btn btn-success">Tambah Mahasiswa</button>
+                                            <input type="submit" class="btn btn-success" value="Tambah Mahasiswa">
                                         </div>
                                     </div>
                                 </form>

@@ -36,15 +36,15 @@ Route::get('/login', function () {
 //dari controller beda, kalo resource pake semua method yang ada, tanpa @ satu satu method
 
 //buat user
-Route::resource('/halamanuser','UsersController');
+Route::resource('halamanuser','UsersController');
 
-Route::resource('/jadwal','ControllerTransaksi');
+Route::resource('jadwal','ControllerTransaksi');
 
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
 //buat USER
-Route::resource('/users','ControllerPengguna');
+Route::resource('users','ControllerPengguna');
 
 //buat login REGISTER
 Auth::routes();
@@ -53,7 +53,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //buat MAHASISWA
-Route::resource('/mahasiswa', 'ControllerMahasiswa');
+Route::resource('mahasiswa', 'ControllerMahasiswa');
 
 //buat DOSEN
-Route::resource('/dosen','ControllerDosen');
+Route::resource('dosen','ControllerDosen');
+
+//buat RUANGAN
+Route::resource('ruangan','ControllerRuangan');
+
+//buat ADMIN
+Route::resource('admin','ControllerAdmin');

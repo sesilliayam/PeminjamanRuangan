@@ -18,6 +18,6 @@ class Transaksi extends Model
         'jam_mulai',
         'jam_selesai',
         'tujuan',
-        'organisasi_terkait',
+        'organisasi_terkait'
     ];
 }

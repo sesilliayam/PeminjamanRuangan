@@ -1,8 +1,8 @@
 @extends('layouts.master_layout')
 
-@section('page_title','Halaman Daftar Dosen')
+@section('page_title','Halaman Daftar Ruangan')
 
-@section('title','Daftar Dosen - Peminjaman Ruangan')
+@section('title','Daftar Ruangan - Peminjaman Ruangan')
 
 @section('content')
 <!-- Start Page Content -->
@@ -12,38 +12,46 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Dosen</h4>
+                                <!-- Alert -->
+                                @if (session()->has('msg'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('msg') }}
+                                    </div>
+                                @endif
+            
+                                <h4 class="card-title">Daftar Ruangan</h4>
                                 <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>NIK</th>
-                                                <th>Kode Dosen</th>
+                                                <th>ID</th>
                                                 <th>Nama</th>
-                                                <th>Jurusan</th>
-                                                <th>Date Created</th>
-                                                <th>Action</td>
+                                                <th>Deskripsi</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <!-- index bernilai a dimana a itu dimulai dari 0 -->
-                                            @foreach($dosens as $index => $a)
+                                            @foreach($ruangans as $index => $a)
                                             <tr>
                                                 <!-- karena dimulai dari 0 -->
-                                                <td>{{($index++)+1}}</td>
-                                                <td>{{$a->nik}}</td>
-                                                <td>{{$a->kode_dosen}}</td>
+                                                {{-- <td>{{($index++)+1}}</td> --}}
+                                                <td>{{$a->id}}</td>
                                                 <td>{{$a->nama}}</td>
-                                                <td>{{$a->jurusan}}</td>
-                                                <td>{{$a->created_at}}</td>
+                                                <td>{{$a->deskripsi}}</td>
                                                 <td>
                                                     <!-- BUTTON EDIT-->
-                                                        <div class="btn-group">
-                        			                        <a href="#" class="btn btn-info btn-xs tip" title="Add New"><i class="fa fa-pencil"></i></a> 
-                                                            <a href="#" class="btn btn-danger btn-xs tip" title="Add New"><i class="fa fa-trash-o"></i></a>
-                        		                        </div>
+                                                    {{-- $a->id itu dimasukkin parameter --}}
+                                                        <form action="{{ route('ruangan.destroy',$a->id) }}" method="post">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <div class="btn-group">
+                                                            <a href="{{ route('ruangan.edit', $a->id) }}" class="btn btn-info btn-xs tip" title="Add New"><i class="fa fa-pencil"></i></a> 
+                                                            <button type="submit" class="btn btn-danger btn-xs tip" title="Add New"><i class="fa fa-trash-o"></i></button>
+                                                        </div>
+                                                        </form>
+                                                       
                                             
                                                 </td>
                                             </tr>
@@ -54,7 +62,7 @@
 
                                 <div class="form-group">
                                         <div class="col-sm-12">
-                                        <a class="btn btn-success" href="{{route('dosen.create')}}">Tambah Dosen</a>
+                                        <a href="{{route('ruangan.create')}}" class="btn btn-success">Tambah Ruangan</a>
                                         </div>
                                     </div>
 

@@ -28,7 +28,8 @@ class ControllerDosen extends Controller
      */
     public function create()
     {
-        //
+        //mengembalikan view
+        return view('contents.datadosen.tambahdosen');
     }
 
     /**

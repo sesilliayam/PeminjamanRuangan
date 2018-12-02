@@ -30,58 +30,9 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-        <aside class="left-sidebar">
-            <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li>
-                            <a href="home" class="waves-effect"><i class="fa fa-clock-o m-r-10" aria-hidden="true"></i>Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="profile" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Profile</a>
-                        </li>
-
-                        <li>
-                            <a href="users" class="waves-effect"><i class="fa fa-users m-r-10" aria-hidden="true"></i>Daftar User</a>
-                        </li>
-
-                        <li>
-                            <a href="jadwal" class="waves-effect"><i class="fa fa-table m-r-10" aria-hidden="true"></i>Lihat Jadwal</a>
-                        </li>
-                
-                        <li>
-                            <a href="histori" class="waves-effect"><i class="fa fa-history m-r-10" aria-hidden="true"></i>Histori Peminjaman</a>
-                        </li>
-
-                        <li class="parent "><a data-toggle="collapse" href="#sub-item-1">
-				            <em class="fa fa-database">&nbsp;</em> Master Data <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
-				            </a>
-				            <ul class="children collapse" id="sub-item-1">
-					            <li><a class="" href="mahasiswa">
-						            <span class="fa fa-user-circle">&nbsp;</span> Data Mahasiswa
-					                </a>
-                                </li>
-					    
-                                <li>
-                                    <a class="" href="dosen">
-						                <span class="fa fa-user-circle-o">&nbsp;</span> Data Dosen
-                                    </a>
-					            </li>
-					<!-- <li><a class="" href="#">
-						<span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
-					</a></li> -->
-                            </ul>
-                        <li><a href="{{route('logout')}} "><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-			</li>
-                       
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
+        {{-- SIDEBAR --}}
+        @include('layouts.sidebar')
+        {{-- END OF SIDEBAR --}}
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -96,10 +47,6 @@
                 <div class="row page-titles">
                     <div class="col-md-6 col-8 align-self-center">
                         <h3 class="text-themecolor m-b-0 m-t-0">@yield('page_title')</h3>
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
                     </div>
                 </div>
                 <!-- ============================================================== -->

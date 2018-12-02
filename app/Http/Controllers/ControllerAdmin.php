@@ -7,8 +7,7 @@ use App\Http\Controllers\Controller;
 Use App\Pengguna;
 use Illuminate\Http\Request;
 
-
-class ControllerMahasiswa extends Controller
+class ControllerAdmin extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +16,8 @@ class ControllerMahasiswa extends Controller
      */
     public function index()
     {
-        //show
-        $mahasiswas = DB::table('Mahasiswas')->paginate(10);
-        return view('contents.datamahasiswa.mahasiswa', compact('mahasiswas'));
+        $admins = DB::table('Admins')->paginate(10);
+        return view('contents.admin.admin', compact('admins'));
     }
 
     /**
@@ -29,7 +27,7 @@ class ControllerMahasiswa extends Controller
      */
     public function create()
     {
-        return view('contents.datamahasiswa.tambahmahasiswa');
+        //
     }
 
     /**
@@ -40,20 +38,7 @@ class ControllerMahasiswa extends Controller
      */
     public function store(Request $request)
     {
-        
-        $data = $request->all();
-        return $data;
-        Mahasiswa::create([
-            'nim' => $data['nim'],
-            // 'nama' => bcrypt($penggunas['nama'])
-            'nama' => $data['nama'],
-            'user_id' => $data['user_id'],
-            'jurusan' => $data['jurusan'],
-            'himpunan' => $data['himpunan'],
-            'laboratorium_id' => $data['laboratorium_id']
-        ]);
-
-        return back();
+        //
     }
 
     /**

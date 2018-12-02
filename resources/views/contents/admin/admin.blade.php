@@ -1,8 +1,8 @@
 @extends('layouts.master_layout')
 
-@section('page_title','Halaman Daftar Dosen')
+@section('page_title','Halaman Daftar Admin')
 
-@section('title','Daftar Dosen - Peminjaman Ruangan')
+@section('title','Daftar Admin - Peminjaman Ruangan')
 
 @section('content')
 <!-- Start Page Content -->
@@ -12,32 +12,25 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Daftar Dosen</h4>
+                                <h4 class="card-title">Daftar Admin</h4>
                                 <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
-                                                <th>NIK</th>
-                                                <th>Kode Dosen</th>
+                                                <th>ID</th>
                                                 <th>Nama</th>
-                                                <th>Jurusan</th>
-                                                <th>Date Created</th>
-                                                <th>Action</td>
+                                                <th>Deskripsi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <!-- index bernilai a dimana a itu dimulai dari 0 -->
-                                            @foreach($dosens as $index => $a)
+                                            @foreach($admins as $index => $a)
                                             <tr>
                                                 <!-- karena dimulai dari 0 -->
                                                 <td>{{($index++)+1}}</td>
-                                                <td>{{$a->nik}}</td>
-                                                <td>{{$a->kode_dosen}}</td>
                                                 <td>{{$a->nama}}</td>
-                                                <td>{{$a->jurusan}}</td>
-                                                <td>{{$a->created_at}}</td>
+                                                <td>{{$a->deskripsi}}</td>
                                                 <td>
                                                     <!-- BUTTON EDIT-->
                                                         <div class="btn-group">
@@ -54,7 +47,7 @@
 
                                 <div class="form-group">
                                         <div class="col-sm-12">
-                                        <a class="btn btn-success" href="{{route('dosen.create')}}">Tambah Dosen</a>
+                                        <a href="{{route('ruangan.create')}}" class="btn btn-success">Tambah Admin</a>
                                         </div>
                                     </div>
 
