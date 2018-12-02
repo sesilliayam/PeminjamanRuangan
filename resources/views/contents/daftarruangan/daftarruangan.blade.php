@@ -47,8 +47,8 @@
                                                             @csrf
                                                             @method('delete')
                                                             <div class="btn-group">
-                                                            <a href="{{ route('ruangan.edit', $a->id) }}" class="btn btn-info btn-xs tip" title="Add New"><i class="fa fa-pencil"></i></a> 
-                                                            <button type="submit" class="btn btn-danger btn-xs tip" title="Add New"><i class="fa fa-trash-o"></i></button>
+                                                            <a href="{{ route('ruangan.edit', $a->id) }}" class="btn btn-info btn-xs tip" title="Edit"><i class="fa fa-pencil"></i></a> 
+                                                            <button type="submit" class="btn btn-danger btn-xs tip" title="Delete"><i class="fa fa-trash-o"></i></button>
                                                         </div>
                                                         </form>
                                                        
