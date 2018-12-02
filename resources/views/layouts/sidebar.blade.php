@@ -35,10 +35,10 @@
                                 class="fa fa-plus"></em></span>
                     </a>
                     <ul class="children collapse" id="sub-item-1">
-                        <li><a class="" href="{{route('admin.index')}}">
+                        {{-- <li><a class="" href="{{route('admin.index')}}">
                                 <span class="fa fa-user-o">&nbsp;</span> Data Admin
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li><a class="" href="mahasiswa">
                                 <span class="fa fa-user-circle">&nbsp;</span> Data Mahasiswa
@@ -53,8 +53,7 @@
 
                         <li>
                             <a href="{{route('users.index')}}" class="waves-effect"><i class="fa fa-users m-r-10"
-                                                                                       aria-hidden="true"></i>Daftar
-                                User</a>
+                                 aria-hidden="true"></i>Daftar User</a>
                         </li>
 
                         <li>
