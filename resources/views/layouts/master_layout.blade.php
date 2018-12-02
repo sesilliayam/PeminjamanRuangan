@@ -18,6 +18,7 @@
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="{{asset('css/colors/green.css')}}" id="theme" rel="stylesheet">
+    @stack('css')
 </head>
 
 <body class="fix-header card-no-border">
@@ -106,6 +107,7 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    @stack('js')
 </body>
 
 </html>

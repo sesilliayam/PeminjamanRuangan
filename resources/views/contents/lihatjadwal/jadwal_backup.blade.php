@@ -4,13 +4,15 @@
 
 @section('title','Jadwal - Peminjaman Ruangan')
 @push('css')
+    <link rel="stylesheet" href="{{ asset('plugins/scheduler/css/jquery-ui.css') }}"/>
     <link rel="stylesheet" href="{{ asset('plugins/scheduler/css/style.css') }}">
     <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 @endpush
 
 @section('content')
-    <div id="schedule"></div>
-
+    <div class="col-md-12">
+        <div id="schedule"></div>
+    </div>
     <!-- Start Page Content -->
     <!-- ============================================================== -->
     <div class="row">
@@ -83,6 +85,7 @@
     </div>
     <!-- ============================================================== -->
     <!-- End PAge Content -->
+
 @endsection
 
 @push('js')
@@ -95,55 +98,39 @@
         $("#schedule").timeSchedule({
             startTime: "08:00", // schedule start time(HH:ii)
             endTime: "16:00",   // schedule end time(HH:ii)
-            widthTime: 60 * 10,  // cell timestamp example 10 minutes
-            timeLineY: 70,       // height(px)
-            verticalScrollbar: 20,   // scrollbar (px)
-            dataWidth: 150,		// data width
-            timeLineBorder: 1,   // border(top and bottom)
-            debug: "#debug",     // debug string output elements
-            change: false,
-            rows: {
-                '1': {
-                    title: 'Title Area',
-                    schedule: [
-                        {
-                            start: '09:00',
-                            end: '12:00',
-                            text: 'Text Area',
-                            data: {}
-                        },
-                        {
-                            start: '11:00',
-                            end: '14:00',
-                            text: 'Text Area',
-                            data: {}
-                        }
-                    ]
-                },
-            },
+            widthTime:60 * 10,  // cell timestamp example 10 minutes
+            timeLineY:70,       // height(px)
+            verticalScrollbar:20,   // scrollbar (px)
+            dataWidth:150,		// data width
+            timeLineBorder:1,   // border(top and bottom)
+            debug:"#debug",     // debug string output elements
+            rows : {'1':{title:'Ruang Diskusi 1<br>(Maks : &plusmn; 4 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'1\')">Lihat Galeri</a>',schedule:[{start:'08:00',end:'10:00',text:'Request',data:{ id : 15560}}]},'2':{title:'Ruang Diskusi 2<br>(Maks : &plusmn; 4 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'2\')">Lihat Galeri</a>',schedule:[{start:'13:30',end:'15:30',text:'Request',data:{ id : 15561}}]},'3':{title:'Ruang Diskusi 3<br>(Maks : &plusmn; 4 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'3\')">Lihat Galeri</a>',schedule:[]},'4':{title:'Ruang Diskusi 4<br>(Maks : &plusmn; 4 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'4\')">Lihat Galeri</a>',schedule:[]},'5':{title:'Ruang Diskusi 5<br>(Maks : &plusmn; 5 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'5\')">Lihat Galeri</a>',schedule:[]},'6':{title:'Ruang Diskusi 8<br>(Maks : &plusmn; 7 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'8\')">Lihat Galeri</a>',schedule:[]},'7':{title:'Ruang Diskusi 6<br>(Maks : &plusmn; 8 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'6\')">Lihat Galeri</a>',schedule:[{start:'13:00',end:'14:30',text:'Request',data:{ id : 15565}}]},'8':{title:'Ruang Diskusi 7<br>(Maks : &plusmn; 8 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'7\')">Lihat Galeri</a>',schedule:[{start:'13:00',end:'14:30',text:'Request',data:{ id : 15563}}]},'9':{title:'Ruang Diskusi 10<br>(Maks : &plusmn; 10 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'10\')">Lihat Galeri</a>',schedule:[]},'10':{title:'Ruang Diskusi 9<br>(Maks : &plusmn; 10 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'9\')">Lihat Galeri</a>',schedule:[{start:'08:30',end:'10:30',text:'Request',data:{ id : 15562}}]},'11':{title:'Mini Theater<br>(Maks : &plusmn; 20 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'15\')">Lihat Galeri</a>',schedule:[{start:'09:30',end:'11:30',text:'Request',data:{ id : 15559}}]},'12':{title:'Open Discussion Room<br>(Maks : &plusmn; 20 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'14\')">Lihat Galeri</a>',schedule:[{start:'13:00',end:'15:00',text:'Request',data:{ id : 15546}},{start:'09:00',end:'11:00',text:'Request',data:{ id : 15564}}]},'13':{title:'Ruang Diskusi 13<br>(Maks : &plusmn; 20 Orang)<br><a style="font-weight:bold;cursor:pointer;color:#000" href="javascript:void(0)" onclick="gallery(\'13\')">Lihat Galeri</a>',schedule:[]}},
             // change: function(node,data){
             // console.log(data.data.id);
             // },
-            init_data: function (node, data) {
+            init_data: function(node,data){
             },
-            click: function (node, data) {
+            click: function(node,data){
                 $.ajax({
-                    url: 'index.php/booking/detail',
+                    url : 'index.php/booking/detail',
                     type: "POST",
                     data: {
-                        id: data.data.id
+                        id : data.data.id
                     },
                     dataType: "JSON",
-                    beforeSend: function () {
+                    beforeSend : function() {
+                        showLoading();
                     },
-                    complete: function () {
+                    complete : function() {
+                        hideLoading();
                     },
-                    success: function (data) {
-                        $('#modal_calendar .modal-title').html('<i class="fa fa-calendar"></i>&nbsp;&nbsp;' + data.header);
+                    success: function(data){
+                        $('#modal_calendar .modal-title').html('<i class="fa fa-calendar"></i>&nbsp;&nbsp;'+data.header);
                         $('#modal_calendar .modal-body').html(data.desc);
                         $('#modal_calendar').modal({keyboard: false, backdrop: 'static'});
                     },
-                    error: function (jqXHR, textStatus, errorThrown) {
+                    error: function (jqXHR, textStatus, errorThrown)
+                    {
                         //info_alert('warning','system error');
                     }
                 });
