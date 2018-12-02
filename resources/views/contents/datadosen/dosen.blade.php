@@ -50,9 +50,9 @@
                                             <form action="{{ route('dosen.destroy', $a->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <a href="#" class="btn btn-info btn-xs tip" title="Add New"><i
+                                                <a href="{{route('dosen.edit', $a->id)}}" class="btn btn-info btn-xs tip" title="Edit"><i
                                                         class="fa fa-pencil"></i></a>
-                                                <button type="submit" class="btn btn-danger btn-xs tip" title="Add New"><i
+                                                <button type="submit" class="btn btn-danger btn-xs tip" title="Delete"><i
                                                         class="fa fa-trash-o"></i></button>
                                             </form>
                                         </div>

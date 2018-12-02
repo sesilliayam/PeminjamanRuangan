@@ -27,7 +27,7 @@
                                     <div class="form-group">
                                         <h3 for="example-email" class="col-md-12">Deskripsi</h3>
                                         <div class="col-md-12">
-                                            <input type="text" name="deskripsi" placeholder="Keterangan ruangan" class="form-control form-control-line"  value="{{ $ruangan->deskripsi }}" id="teksholder" name="example-email" id="example-email" required>
+                                            <input type="text" name="deskripsi" placeholder="Keterangan ruangan" class="form-control form-control-line"  value="{{ $ruangan->deskripsi }}" id="teksholder" required>
                                         </div>
                                     </div>
 

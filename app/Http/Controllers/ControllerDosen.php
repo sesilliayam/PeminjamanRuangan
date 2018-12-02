@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Dosen;
-use App\User;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-Use App\Pengguna;
+//semacam import di Java, karena tabel Dosen ini perlu model Dosen dan User
+// Use App\Pengguna;
+use App\Dosen;
+use App\User;
 use Illuminate\Http\Request;
 
 
@@ -31,6 +32,7 @@ class ControllerDosen extends Controller
     public function create()
     {
         //mengembalikan view
+        //mengambalikan view yang role nya selain admin
         $user = User::where('role', '<>', 'admin')->get();
         return view('contents.datadosen.tambahdosen', compact('user'));
     }
@@ -67,9 +69,10 @@ class ControllerDosen extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dosen $dosen)
     {
-        //
+        // $user = User::where('role', '<>', 'admin')->get();
+        return view('contents.datadosen.editdosen', compact('dosen'));
     }
 
     /**
@@ -79,9 +82,16 @@ class ControllerDosen extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+
+    public function update(Request $request, Dosen $dosen){
+        $dosen->update([
+            'nik' => $request['nik'],
+            'kode_dosen' => $request['kode_dosen'],
+            'nama' => $request['nama'],
+            'jurusan' => $request['jurusan'],
+            'user_id' => $request['user_id']
+        ]);
+        return redirect()->route('dosen.index')->with(['msg' => 'Berhasil Mengubah Informasi Ruangan']);
     }
 
     /**
@@ -93,7 +103,6 @@ class ControllerDosen extends Controller
     public function destroy(Dosen $dosen)
     {
         $dosen->delete();
-
         return back()->with(['msg' => 'Berhasil Menghapus Dosen']);
     }
 }

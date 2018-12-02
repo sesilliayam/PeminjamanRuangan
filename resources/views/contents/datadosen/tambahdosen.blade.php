@@ -63,7 +63,7 @@
                         <div class="form-group">
                             <div class="col-sm-12">
                                 {{--  --}}
-                                <button class="btn btn-success" type="submit">Tambah User</button>
+                                <button class="btn btn-success" type="submit">Tambah Dosen</button>
                             </div>
                         </div>
                     </form>
