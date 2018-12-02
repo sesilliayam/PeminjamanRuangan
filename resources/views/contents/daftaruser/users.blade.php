@@ -12,6 +12,12 @@
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-block">
+                                {{-- Allert --}}
+                                @if (session()->has('msg'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('msg') }}
+                                    </div>
+                                @endif
                                 <h4 class="card-title">Daftar User</h4>
                                 <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                                 <div class="table-responsive">
@@ -21,6 +27,7 @@
                                                 <th>#</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
+                                                <th>Role</th>
                                                 <th>Date Created</th>
                                                 {{-- <th>Password</th> --}}
                                                 <th>Action</th>
@@ -34,14 +41,21 @@
                                                 <td>{{($index++)+1}}</td>
                                                 <td>{{$a->name}}</td>
                                                 <td>{{$a->email}}</td>
+                                                <td>{{$a->role}}</td>
                                                 <td>{{$a->created_at}}</td>
                                                 {{-- <td>{{$a->password}}</td> --}}
                                                 <td>
                                                     <!-- BUTTON EDIT-->
+                                                    {{-- $a->id itu dimasukkin parameter --}}
+                                                    {{-- formnya aslinya punya si delete --}}
+                                                    <form action="{{ route('users.destroy',$a->id) }}" method="post">
+                                                        @csrf
+                                                        @method('delete')
                                                         <div class="btn-group">
-                        			                        <a href="#" class="btn btn-info btn-xs tip" title="Add New"><i class="fa fa-pencil"></i></a> 
-                                                            <a href="#" class="btn btn-danger btn-xs tip" title="Add New"><i class="fa fa-trash-o"></i></a>
-                        		                        </div>
+                                                        <a href="{{ route('users.edit', $a->id) }}" class="btn btn-info btn-xs tip" title="Edit"><i class="fa fa-pencil"></i></a> 
+                                                        <button type="submit" class="btn btn-danger btn-xs tip" title="Delete"><i class="fa fa-trash-o"></i></button>
+                                                    </div>
+                                                    </form>
                                             
                                                 </td>
                                             </tr>

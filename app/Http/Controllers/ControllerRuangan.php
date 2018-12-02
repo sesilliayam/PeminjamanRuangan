@@ -93,7 +93,7 @@ class ControllerRuangan extends Controller
             'nama' => $request['nama'],
             'deskripsi' => $request['deskripsi']
         ]);
-        return redirect()->route('ruangan.index')->with(['msg' => 'Berhasil Mengubah Informasi Ruangan']);;
+        return redirect()->route('ruangan.index')->with(['msg' => 'Berhasil Mengubah Informasi Ruangan']);
     }
 
     /**

@@ -6,7 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-Use App\Pengguna;
+// Use App\Pengguna;
 
 class ControllerPengguna extends Controller
 {
@@ -43,7 +43,7 @@ class ControllerPengguna extends Controller
         $data = $request->except(['_token']);
         User::create($data);
         //return response()->json($data);
-        return back()->with(['alert'=>'success', 'msg'=>'Data Berhasil di Disimpan']);
+        return redirect()->route('users.index')->with(['alert'=>'success', 'msg'=>'Data Berhasil di Disimpan']);
     }
 
     /**
@@ -63,11 +63,10 @@ class ControllerPengguna extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
-        $data = Pengguna::findOrFail($id);
-        return view('contents.edituser', compact(['data']));
+        // return $user;
+        return view('contents.daftaruser.edituser', compact('user'));
     }
 
     /**
@@ -77,12 +76,16 @@ class ControllerPengguna extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
-        $data = Pengguna::findOrFail($id);
-        $data->fill($request->except(['_token']))->save();
-        return back()->with(['alert'=>'success', 'msg'=>'Data Berhasil di DiUbah']);
+        $user->update([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'role' => $request['role'],
+            'password' => $request['password'],
+        ]);
+
+        return redirect()->route('users.index')->with(['msg' => 'Berhasil Mengubah Informasi Pengguna']);
     }
 
     /**
@@ -91,19 +94,21 @@ class ControllerPengguna extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return back()->with(['msg' => 'Berhasil Menghapus User']);
     }
 
-    //ditambahin sendiri
-    public function panggildatauser()
-    {
-        $users = DB::table('Penggunas')->paginate(10);
-        return view('contents.daftaruser.users', ['users' => $users]);
-    }
+    // //ditambahin sendiri
+    // public function panggildatauser()
+    // {
+    //     $users = DB::table('Penggunas')->paginate(10);
+    //     return view('contents.daftaruser.users', ['users' => $users]);
+    // }
 
-    public function tambahuser(){
-        return view('contents.daftaruser.tambahuser');
-    }
+    // public function tambahuser(){
+    //     return view('contents.daftaruser.tambahuser');
+    // }
 }
