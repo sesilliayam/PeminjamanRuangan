@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Dosen;
+use App\User;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 Use App\Pengguna;
@@ -29,7 +31,8 @@ class ControllerDosen extends Controller
     public function create()
     {
         //mengembalikan view
-        return view('contents.datadosen.tambahdosen');
+        $user = User::where('role', '<>', 'admin')->get();
+        return view('contents.datadosen.tambahdosen', compact('user'));
     }
 
     /**
@@ -40,7 +43,11 @@ class ControllerDosen extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        Dosen::create($data);
+
+        return redirect()->route('dosen.index')->with(['msg' => 'Berhasil Menambahkan Dosen']);
     }
 
     /**
@@ -83,8 +90,10 @@ class ControllerDosen extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dosen $dosen)
     {
-        //
+        $dosen->delete();
+
+        return back()->with(['msg' => 'Berhasil Menghapus Dosen']);
     }
 }

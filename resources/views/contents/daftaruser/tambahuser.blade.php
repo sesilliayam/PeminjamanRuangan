@@ -18,11 +18,28 @@
                                     @csrf
                                     {{-- token untuk form laravel --}}
                                     <div class="form-group">
-                                        <label class="col-md-12">Username</label>
+                                        <label class="col-md-12">Nama</label>
                                         <div class="col-md-12">
-                                            <input type="text" name="username" placeholder="Johnathan Doe" class="form-control form-control-line">
+                                            <input type="text" name="name" placeholder="Johnathan Doe" class="form-control form-control-line">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-md-12">Email</label>
+                                        <div class="col-md-12">
+                                            <input type="text" name="email" placeholder="jonathan@gmail.com" class="form-control form-control-line">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">Role</label>
+                                        <div class="col-md-12">
+                                            <select name="role" id="role" class="form-control" required>
+                                                <option value="admin">Admin</option>
+                                                <option value="user">User</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="example-email" class="col-md-12">Password</label>
                                         <div class="col-md-12">

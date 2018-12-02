@@ -24,7 +24,7 @@ class CreateMahasiswasTable extends Migration
             $table->timestamps();
 
             //buat foreign key
-            $table->foreign('user_id')->references('id')->on('penggunas');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('laboratorium_id')->references('id')->on('laboratoria');
         });
     }

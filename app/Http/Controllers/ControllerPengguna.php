@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -40,10 +41,9 @@ class ControllerPengguna extends Controller
     public function store(Request $request)
     {
         $data = $request->except(['_token']);
-        $item = new Pengguna($data);
-        $item->save();
+        User::create($data);
         //return response()->json($data);
-        return back()->with(['alert'=>'success', 'msg'=>'Data Berhasil di Disimpan']);    
+        return back()->with(['alert'=>'success', 'msg'=>'Data Berhasil di Disimpan']);
     }
 
     /**
