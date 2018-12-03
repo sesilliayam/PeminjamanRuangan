@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-Use App\Pengguna;
-use Illuminate\Http\Request;
 
+use App\Dosen;
+use App\Laboratorium;
 
-class ControllerMahasiswa extends Controller
+class ControllerLab extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +18,8 @@ class ControllerMahasiswa extends Controller
      */
     public function index()
     {
-        //show
-        $mahasiswas = DB::table('mahasiswas')->paginate(10);
-        return view('contents.datamahasiswa.mahasiswa', compact('mahasiswas'));
+        $laboratoria = DB::table('laboratoria')->paginate(10);
+        return view('contents.lab.daftarlab', compact('laboratoria'));
     }
 
     /**
@@ -29,7 +29,9 @@ class ControllerMahasiswa extends Controller
      */
     public function create()
     {
-        return view('contents.datamahasiswa.tambahmahasiswa');
+        //mengembalikan view
+        $dosen = Dosen::where('nik', '<>', '')->get();
+        return view('contents.lab.tambahlab', compact('dosen'));
     }
 
     /**
@@ -40,20 +42,9 @@ class ControllerMahasiswa extends Controller
      */
     public function store(Request $request)
     {
-        
         $data = $request->all();
-        return $data;
-        Mahasiswa::create([
-            'nim' => $data['nim'],
-            // 'nama' => bcrypt($penggunas['nama'])
-            'nama' => $data['nama'],
-            'user_id' => $data['user_id'],
-            'jurusan' => $data['jurusan'],
-            'himpunan' => $data['himpunan'],
-            'laboratorium_id' => $data['laboratorium_id']
-        ]);
-
-        return back();
+        Laboratorium::create($data);
+        return redirect()->route('lab.index')->with(['msg' => 'Berhasil Menambahkan Dosen']);
     }
 
     /**

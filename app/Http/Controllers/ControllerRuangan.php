@@ -17,7 +17,7 @@ class ControllerRuangan extends Controller
      */
     public function index()
     {
-        $ruangans = DB::table('Ruangans')->paginate(10);
+        $ruangans = DB::table('ruangans')->paginate(10);
         return view('contents.daftarruangan.daftarruangan', compact('ruangans'));
     }
 

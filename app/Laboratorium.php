@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Laboratorium extends Model
 {
-    protected $table = "himpunans";
+    protected $table = "laboratoria";
     protected $fillable = [
         'nama',
         'dosen_id'

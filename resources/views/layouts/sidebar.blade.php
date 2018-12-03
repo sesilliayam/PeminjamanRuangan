@@ -57,7 +57,7 @@
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="fa fa-bookmark-o m-r-10" aria-hidden="true"></i>Daftar
+                        <a href="{{route('lab.index')}}" class="waves-effect"><i class="fa fa-bookmark-o m-r-10" aria-hidden="true"></i>Daftar
                                 Laboratorium</a>
                         </li>
 

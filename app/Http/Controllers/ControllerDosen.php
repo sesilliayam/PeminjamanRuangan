@@ -20,7 +20,7 @@ class ControllerDosen extends Controller
      */
     public function index()
     {
-        $dosens = DB::table('Dosens')->paginate(10);
+        $dosens = DB::table('dosens')->paginate(10);
         return view('contents.datadosen.dosen', ['dosens' => $dosens]);
     }
 

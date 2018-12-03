@@ -63,3 +63,6 @@ Route::resource('ruangan','ControllerRuangan');
 
 //buat ADMIN
 Route::resource('admin','ControllerAdmin');
+
+//buar LAB
+Route::resource('lab', 'ControllerLab');

@@ -16,7 +16,7 @@ class ControllerAdmin extends Controller
      */
     public function index()
     {
-        $admins = DB::table('Admins')->paginate(10);
+        $admins = DB::table('admins')->paginate(10);
         return view('contents.admin.admin', compact('admins'));
     }
 

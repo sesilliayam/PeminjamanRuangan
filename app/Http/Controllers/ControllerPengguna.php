@@ -18,7 +18,7 @@ class ControllerPengguna extends Controller
     public function index()
     {
         // return view('contents.daftaruser.users');
-        $users = DB::table('Users')->paginate(10);
+        $users = DB::table('users')->paginate(10);
         return view('contents.daftaruser.users', ['users' => $users]);
     }
 
