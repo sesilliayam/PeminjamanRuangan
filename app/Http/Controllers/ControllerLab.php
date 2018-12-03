@@ -30,7 +30,7 @@ class ControllerLab extends Controller
     public function create()
     {
         //mengembalikan view
-        $dosen = Dosen::where('nik', '<>', '')->get();
+        $mahasiswa = Mahasiswa::where('nik', '<>', '')->get();
         return view('contents.lab.tambahlab', compact('dosen'));
     }
 

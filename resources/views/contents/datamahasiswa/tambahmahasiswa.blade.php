@@ -14,26 +14,59 @@
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-block">
-                            <form class="form-horizontal form-material" action="{{route('lab.store')}}" method="post">
+                            <form class="form-horizontal form-material" action="{{route('mahasiswa.store')}}" method="post">
                                     @csrf
                                     {{-- token untuk form laravel --}}
                                     <div class="form-group">
-                                        <h3 class="col-md-12">Nama</h3>
+                                        <h3 class="col-md-12">NIM</h3>
                                         <div class="col-md-12">
-                                            <input type="text" name="nama" placeholder="Contoh: FRI Laboratory" class="form-control form-control-line" required>
+                                            <input type="text" name="nim" placeholder="Contoh: 1202160000" class="form-control form-control-line" required>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="form-group">
-                                            <h3 class="col-md-12">Dosen Pembimbing</h3>
+                                            <h3 class="col-md-12">Nama</h3>
                                             <div class="col-md-12">
-                                                <select name="dosen_id" id="dosen_id" class="form-control">
-                                                    @foreach($dosen as $item)
-                                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                                                    @endforeach
+                                                <input type="text" name="nama" placeholder="Contoh: Budi Santoso" class="form-control form-control-line" required>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-12">User ID</label>
+                                            <div class="col-md-12">
+                                                <select name="user_id" id="user_id" class="form-control">
+                                                 @foreach($user as $item)
+                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                                @endforeach
                                                 </select>
                                             </div>
-                                        </div>
+                                            </div>
+
+                                    <div class="form-group">
+                                            <h3 class="col-md-12">Jurusan</h3>
+                                            <div class="col-md-12">
+                                                <input type="text" name="user_id" placeholder="Contoh: 1202160000" class="form-control form-control-line" required>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <h3 class="col-md-12">Himpunan</h3>
+                                            <div class="col-md-12">
+                                                    <select name="himpunan" id="user_id" class="form-control">
+                                                        <option value="1">HMSI</option>
+                                                        <option value="2">HMTI</option>
+                                                    </select>
+                                                </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                            <h3 class="col-md-12">Laboratorium</h3>
+                                            <div class="col-md-12">
+                                                <input type="text" name="laboratorium_id" placeholder="Contoh: 1202160000" class="form-control form-control-line" required>
+                                            </div>
+                                    </div>
+                                    
+                                    
 
                                     <div class="form-group">
                                         <div class="col-sm-12">

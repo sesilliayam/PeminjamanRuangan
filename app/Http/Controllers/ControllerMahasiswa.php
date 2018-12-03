@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-Use App\Pengguna;
+Use App\Mahasiswa;
+Use App\User;
 use Illuminate\Http\Request;
 
 
@@ -29,7 +30,9 @@ class ControllerMahasiswa extends Controller
      */
     public function create()
     {
-        return view('contents.datamahasiswa.tambahmahasiswa');
+        $user = User::where('role', '<>', 'admin')->get();
+        return view('contents.datamahasiswa.mahasiswa', compact('user'));
+        // return view('contents.datamahasiswa.tambahmahasiswa');
     }
 
     /**
