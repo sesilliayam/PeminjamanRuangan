@@ -1,8 +1,8 @@
 @extends('layouts.master_layout')
 
-@section('page_title','Tambah Mahasiswa')
+@section('page_title','Tambah Daftar Laboratorium')
 
-@section('title','Mahasiswa - Peminjaman Ruangan')
+@section('title','Tambah Lab - Peminjaman Ruangan')
 
 @section('content')
  <!-- Start Page Content -->
@@ -14,69 +14,31 @@
                     <div class="col-lg-8 col-xlg-9 col-md-7">
                         <div class="card">
                             <div class="card-block">
-                            <form class="form-horizontal form-material" action="{{route('mahasiswa.store')}}">
+                            <form class="form-horizontal form-material" action="{{route('lab.store')}}" method="post">
                                     @csrf
+                                    {{-- token untuk form laravel --}}
                                     <div class="form-group">
-                                        <label class="col-md-12">NIM</label>
+                                        <h3 class="col-md-12">Nama</h3>
                                         <div class="col-md-12">
-                                            <input type="text" placeholder="Cth: 1202164129" class="form-control form-control-line" name="niim" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="example-email" class="col-md-12">Nama</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="Cth: Budi Santoso" class="form-control form-control-line"  id="teksholder" name="nama" id="example-email" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="col-md-12">User ID</label>
-                                        <div class="col-md-12">
-                                            <input type="text" placeholder="Cth 1" class="form-control form-control-line" name="user_id" required>
+                                            <input type="text" name="nama" placeholder="Contoh: FRI Laboratory" class="form-control form-control-line" required>
                                         </div>
                                     </div>
                                     
-                                        <div class="form-group">
-                                        <label class="col-sm-12">Jurusan </label>
-                                        <div class="col-sm-12">
-                                            <select class="form-control form-control-line" name="jurusan" required>
-                                                <option value="Sistem Informasi">Sistem Informasi</option>
-                                                <option value="Teknik Industri">Teknik Industri</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
                                     <div class="form-group">
-                                        <label class="col-sm-12">Kepengurusan Himpunan</label>
-                                        <div class="col-sm-12">
-                                            <select class="form-control form-control-line" name="himpunan" required>
-                                                <option value="0">-</option>
-                                                <option value="HMSI">HMSI</option>
-                                                <option value="HMTI">HMTI</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                            <label class="col-sm-12">Keanggotaan Laboratorium</label>
-                                            <div class="col-sm-12">
-                                                <select class="form-control form-control-line" name="laboratorium_id" required>
-                                                    <option value="0">-</option>
-                                                    <option value="1">Daspro</option>
-                                                    <option value="2">Sisjar</option>
-                                                    <option value="3">ERP</option>
-                                                    <option value="4">BPAD</option>
-                                                    <option value="6">EAD</option>
-                                                    <option value="7">ITGRC</option>
+                                            <h3 class="col-md-12">Dosen Pembimbing</h3>
+                                            <div class="col-md-12">
+                                                <select name="dosen_id" id="dosen_id" class="form-control">
+                                                    @foreach($dosen as $item)
+                                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
 
-                                    </div>
-                                    
-                                    
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <input type="submit" class="btn btn-success" value="Tambah Mahasiswa">
+                                            {{--  --}}
+                                        <input type="submit" class="btn btn-success" type="submit" value="Tambah Laboratorium">
                                         </div>
                                     </div>
                                 </form>

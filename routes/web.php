@@ -64,5 +64,8 @@ Route::resource('ruangan','ControllerRuangan');
 //buat ADMIN
 Route::resource('admin','ControllerAdmin');
 
-//buar LAB
+//buat LAB
 Route::resource('lab', 'ControllerLab');
+
+//buat HIMPUNAN
+Route::resource('himpunan', 'ControllerHimpunan');

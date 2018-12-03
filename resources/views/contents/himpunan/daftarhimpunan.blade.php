@@ -1,8 +1,8 @@
 @extends('layouts.master_layout')
 
-@section('page_title','Tambah Mahasiswa')
+@section('page_title','Halaman Daftar Himpunan ')
 
-@section('title','Tambah Mahasiswa - Peminjaman Ruangan')
+@section('title','Daftar Himpunan - Peminjaman Ruangan')
 
 @section('content')
     <!-- Start Page Content -->
@@ -19,43 +19,34 @@
                     @endif
 
                     
-                    <h4 class="card-title">Tambah Mahasiswa</h4>
+                    <h4 class="card-title">Daftar Himpunan FRI</h4>
                     <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>NIM</th>
                                 <th>Nama</th>
-                                <th>User ID</th>
-                                <th>Jurusan</th>
-                                <th>Himpunan</th>
-                                <th>Laboratorium</th>
-                                <th>Action</th>
+                                <th>Dosen Pembimbing</th>
                                 </td>
                             </tr>
                             </thead>
                             <tbody>
                             <!-- index bernilai a dimana a itu dimulai dari 0 -->
-                            @foreach($mahasiswas as $index => $a)
+                            @foreach($himpunans as $index => $a)
                                 <tr>
                                     <!-- karena dimulai dari 0 -->
                                     {{-- <td>{{($index++)+1}}</td> --}}
                                     <td>{{$a->id}}</td>
-                                    <td>{{$a->nim}}</td>
                                     <td>{{$a->nama}}</td>                                    
-                                    <td>{{$a->user_id}}</td>                                    
-                                    <td>{{$a->jurusan}}</td>
-                                    <td>{{$a->himpunan}}</td>
-                                    <td>{{$a->laboratorium_id}}</td>
+                                    <td>{{$a->pembina_id}}</td>
                                     <td>
                                         <!-- BUTTON EDIT-->
                                         <div class="btn-group">
-                                            <form action="{{ route('mahasiswa.destroy', $a->id) }}" method="post">
+                                            <form action="{{ route('lab.destroy', $a->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <a href="{{route('mahasiswa.edit', $a->id)}}" class="btn btn-info btn-xs tip" title="Edit"><i
+                                                <a href="{{route('lab.edit', $a->id)}}" class="btn btn-info btn-xs tip" title="Edit"><i
                                                         class="fa fa-pencil"></i></a>
                                                 <button type="submit" class="btn btn-danger btn-xs tip" title="Delete"><i
                                                         class="fa fa-trash-o"></i></button>
@@ -71,7 +62,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <a class="btn btn-success" href="{{route('mahasiswa.create')}}">Tambah Mahasiswa</a>
+                            <a class="btn btn-success" href="{{route('himpunan.create')}}">Tambah Lab</a>
                         </div>
                     </div>
 

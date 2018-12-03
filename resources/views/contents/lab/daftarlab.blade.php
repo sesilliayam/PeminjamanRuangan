@@ -17,6 +17,8 @@
                             {{ session()->get('msg') }}
                         </div>
                     @endif
+
+                    
                     <h4 class="card-title">Daftar Laboratorium FRI</h4>
                     <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                     <div class="table-responsive">
@@ -36,7 +38,7 @@
                                     <!-- karena dimulai dari 0 -->
                                     {{-- <td>{{($index++)+1}}</td> --}}
                                     <td>{{$a->id}}</td>
-                                    <td>{{$a->nama}}</td>
+                                    <td>{{$a->nama}}</td>                                    
                                     <td>{{$a->dosen_id}}</td>
                                     <td>
                                         <!-- BUTTON EDIT-->

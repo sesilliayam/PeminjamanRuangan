@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 use App\Dosen;
-use App\Laboratorium;
+use App\Himpunan;
 
-class ControllerLab extends Controller
+class ControllerHimpunan extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +18,8 @@ class ControllerLab extends Controller
      */
     public function index()
     {
-        $laboratoria = DB::table('laboratoria')->paginate(10);
-        return view('contents.lab.daftarlab', compact('laboratoria'));
+        $himpunans = DB::table('himpunans')->paginate(10);
+        return view('contents.himpunan.daftarhimpunan', compact('himpunans'));
     }
 
     /**
@@ -29,9 +29,9 @@ class ControllerLab extends Controller
      */
     public function create()
     {
-        //mengembalikan view
-        $dosen = Dosen::where('nik', '<>', '')->get();
-        return view('contents.lab.tambahlab', compact('dosen'));
+         //mengembalikan view
+         $dosen = Dosen::where('nik', '<>', '')->get();
+         return view('contents.himpunan.tambahhimpunan', compact('dosen'));
     }
 
     /**
@@ -43,8 +43,8 @@ class ControllerLab extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Laboratorium::create($data);
-        return redirect()->route('lab.index')->with(['msg' => 'Berhasil Menambahkan Data Lab']);
+        Himpunan::create($data);
+        return redirect()->route('himpunan.index')->with(['msg' => 'Berhasil Menambahkan Data Himpunan']);
     }
 
     /**

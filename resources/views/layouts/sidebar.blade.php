@@ -40,6 +40,11 @@
                             </a>
                         </li> --}}
 
+                        <li>
+                            <a href="{{route('users.index')}}" class="waves-effect"><i class="fa fa-users m-r-10"
+                                     aria-hidden="true"></i>Daftar User</a>
+                        </li>
+
                         <li><a class="" href="mahasiswa">
                                 <span class="fa fa-user-circle">&nbsp;</span> Data Mahasiswa
                             </a>
@@ -52,17 +57,12 @@
                         </li>
 
                         <li>
-                            <a href="{{route('users.index')}}" class="waves-effect"><i class="fa fa-users m-r-10"
-                                 aria-hidden="true"></i>Daftar User</a>
-                        </li>
-
-                        <li>
                         <a href="{{route('lab.index')}}" class="waves-effect"><i class="fa fa-bookmark-o m-r-10" aria-hidden="true"></i>Daftar
                                 Laboratorium</a>
                         </li>
 
                         <li>
-                            <a href="#" class="waves-effect"><i class="fa fa-bookmark m-r-10" aria-hidden="true"></i>Daftar
+                        <a href="{{route('himpunan.index')}}" class="waves-effect"><i class="fa fa-bookmark m-r-10" aria-hidden="true"></i>Daftar
                                 Himpunan</a>
                         </li>
                         <!-- <li><a class="" href="#">
