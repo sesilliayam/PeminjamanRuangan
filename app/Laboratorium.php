@@ -11,4 +11,10 @@ class Laboratorium extends Model
         'nama',
         'dosen_id'
     ];
+
+    public function dosen()
+    {
+        return $this->belongsTo(Dosen::class,'dosen_id','id');
+    }
+
 }

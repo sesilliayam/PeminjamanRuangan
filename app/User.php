@@ -33,4 +33,9 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+
+    public function dosen()
+    {
+        return $this->hasOne(Dosen::class,'user_id','id');
+    }
 }

@@ -39,7 +39,7 @@
                                     {{-- <td>{{($index++)+1}}</td> --}}
                                     <td>{{$a->id}}</td>
                                     <td>{{$a->nama}}</td>                                    
-                                    <td>{{$a->dosen_id}}</td>
+                                    <td>{{$a->dosen->nama}}</td>
                                     <td>
                                         <!-- BUTTON EDIT-->
                                         <div class="btn-group">

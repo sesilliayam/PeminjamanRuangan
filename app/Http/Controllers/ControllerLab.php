@@ -18,7 +18,7 @@ class ControllerLab extends Controller
      */
     public function index()
     {
-        $laboratoria = DB::table('laboratoria')->paginate(10);
+        $laboratoria = Laboratorium::paginate(10);
         return view('contents.lab.daftarlab', compact('laboratoria'));
     }
 
