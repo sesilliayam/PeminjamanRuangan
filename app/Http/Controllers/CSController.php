@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\CleaningService;
 use Illuminate\Http\Request;
 
+Use App\User;
+
 class CSController extends Controller
 {
     /**
@@ -25,7 +27,8 @@ class CSController extends Controller
      */
     public function create()
     {
-        //
+        $user = User::where('status', '=', 'CS')->get();
+        return view('contents.datacs.tambahcs', compact('user'));
     }
 
     /**
@@ -36,7 +39,9 @@ class CSController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        CleaningService::create($data);
+        return redirect()->route('cs.index')->with(['msg' => 'Berhasil Menambahkan CS']);
     }
 
     /**
