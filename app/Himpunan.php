@@ -11,4 +11,8 @@ class Himpunan extends Model
         'nama',
         'pembina_id'
     ];
+
+    public function dosen(){
+        return $this->belongsTo(Dosen::class, 'pembina_id','id');
+    }
 }

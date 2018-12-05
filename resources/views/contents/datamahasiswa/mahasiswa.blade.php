@@ -1,8 +1,8 @@
 @extends('layouts.master_layout')
 
-@section('page_title','Tambah Mahasiswa')
+@section('page_title','Daftar Mahasiswa')
 
-@section('title','Tambah Mahasiswa - Peminjaman Ruangan')
+@section('title','Daftar Mahasiswa - Peminjaman Ruangan')
 
 @section('content')
     <!-- Start Page Content -->
@@ -30,6 +30,7 @@
                                 <th>Nama</th>
                                 <th>User ID</th>
                                 <th>Jurusan</th>
+                                <th>Kelas</th>
                                 <th>Himpunan</th>
                                 <th>Laboratorium</th>
                                 <th>Action</th>
@@ -47,8 +48,9 @@
                                     <td>{{$a->nama}}</td>                                    
                                     <td>{{$a->user_id}}</td>                                    
                                     <td>{{$a->jurusan}}</td>
-                                    <td>{{$a->himpunan}}</td>
-                                    <td>{{$a->laboratorium_id}}</td>
+                                    <td>{{$a->kelas->nama}}</td>
+                                    <td>{{$a->himpunan->nama}}</td>
+                                    <td>{{$a->laboratorium->nama}}</td>
                                     <td>
                                         <!-- BUTTON EDIT-->
                                         <div class="btn-group">

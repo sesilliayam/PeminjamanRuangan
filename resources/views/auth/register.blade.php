@@ -59,6 +59,16 @@
 								</div>
 
 								<div class="row">
+										<div class="col">
+											<div class="form-group">
+												<label for="formGroupExampleInput">Status</label>
+												<input  name="status" type="text" class="form-control" id="formGroupExampleInput" placeholder="" required>
+												<small id="" class="form-text text-muted">Contoh: Mahasiswa</small>
+											</div>
+										</div>
+									</div>
+
+								<div class="row">
 									<div class="col">
 										<div class="form-group">
 											<label for="formGroupExampleInput">Password</label>

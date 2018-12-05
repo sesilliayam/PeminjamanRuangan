@@ -25,10 +25,12 @@
                                         <thead>
                                             <tr>
                                                 {{-- <th>#</th> --}}
+                                                {{-- <th>#</th> --}}
                                                 <th>User_ID</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Role</th>
+                                                <th>Status</th>
                                                 <th>Date Created</th>
                                                 {{-- <th>Password</th> --}}
                                                 <th>Action</th>
@@ -44,6 +46,7 @@
                                                 <td>{{$a->name}}</td>
                                                 <td>{{$a->email}}</td>
                                                 <td>{{$a->role}}</td>
+                                                <td>{{$a->status}}</td>
                                                 <td>{{$a->created_at}}</td>
                                                 {{-- <td>{{$a->password}}</td> --}}
                                                 <td>
@@ -65,6 +68,8 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+                                {{$users->links()}}
 
                                 <div class="form-group">
                                         <div class="col-sm-12">

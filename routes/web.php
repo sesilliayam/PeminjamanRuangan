@@ -74,3 +74,6 @@ Route::resource('himpunan', 'ControllerHimpunan');
 
 //buat KELAS
 Route::resource('kelas','ControllerKelas');
+
+//buat CLEANING SERVICE
+Route::resource('cs', 'CSController');

@@ -4,8 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+
+//model yang dipakai
 Use App\Mahasiswa;
 Use App\User;
+Use App\Himpunan;
+Use App\Kelas;
+Use App\Laboratorium;
+
 use Illuminate\Http\Request;
 
 
@@ -19,7 +25,8 @@ class ControllerMahasiswa extends Controller
     public function index()
     {
         //show
-        $mahasiswas = DB::table('mahasiswas')->paginate(10);
+        // $mahasiswas = DB::table('mahasiswas')->paginate(10);
+        $mahasiswas = Mahasiswa::paginate(5);
         return view('contents.datamahasiswa.mahasiswa', compact('mahasiswas'));
     }
 
@@ -31,7 +38,10 @@ class ControllerMahasiswa extends Controller
     public function create()
     {
         $user = User::where('role', '<>', 'admin')->get();
-        return view('contents.datamahasiswa.mahasiswa', compact('user'));
+        $himpunan = Himpunan::all();
+        $laboratorium = Laboratorium::all();
+        $kelas = Kelas::all();
+        return view('contents.datamahasiswa.tambahmahasiswa', compact('user','himpunan','laboratorium','kelas'));
         // return view('contents.datamahasiswa.tambahmahasiswa');
     }
 
@@ -43,20 +53,9 @@ class ControllerMahasiswa extends Controller
      */
     public function store(Request $request)
     {
-        
         $data = $request->all();
-        return $data;
-        Mahasiswa::create([
-            'nim' => $data['nim'],
-            // 'nama' => bcrypt($penggunas['nama'])
-            'nama' => $data['nama'],
-            'user_id' => $data['user_id'],
-            'jurusan' => $data['jurusan'],
-            'himpunan' => $data['himpunan'],
-            'laboratorium_id' => $data['laboratorium_id']
-        ]);
-
-        return back();
+        Mahasiswa::create($data);
+        return redirect()->route('mahasiswa.index')->with(['msg' => 'Berhasil Menambahkan Data Mahasiswa']);
     }
 
     /**

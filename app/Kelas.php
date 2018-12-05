@@ -11,4 +11,8 @@ class Kelas extends Model
         'nama',
         'id_dosenwali'
     ];
+
+    public function dosen(){
+        return $this->belongsTo(Dosen::class, 'id_dosenwali','id');
+    }
 }

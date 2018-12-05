@@ -19,15 +19,16 @@ class CreateMahasiswasTable extends Migration
             $table->string('nama');
             $table->integer('user_id')->unsigned();
             $table->string('jurusan');
-            $table->string('himpunan');
+            $table->integer('kelas_id')->unsigned();
+            $table->integer('himpunan_id')->unsigned();
             $table->integer('laboratorium_id')->unsigned();
-            $table->integer('kelas_id')->unsigned()->nullable();
             $table->timestamps();
 
             //buat foreign key
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('laboratorium_id')->references('id')->on('laboratoria');
             $table->foreign('kelas_id')->references('id')->on('kelas');
+            $table->foreign('himpunan_id')->references('id')->on('himpunans');
+            $table->foreign('laboratorium_id')->references('id')->on('laboratoria');
         });
     }
 

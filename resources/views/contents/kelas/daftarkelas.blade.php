@@ -39,7 +39,8 @@
                                     {{-- <td>{{($index++)+1}}</td> --}}
                                     <td>{{$a->id}}</td>
                                     <td>{{$a->nama}}</td>
-                                    <td>{{$a->id_dosenwali}}</td>
+                                    {{-- dosen = nama function di model Kelas --}}
+                                    <td>{{$a->dosen->nama}}</td>
                                     <td>
                                         <!-- BUTTON EDIT-->
                                         <div class="btn-group">

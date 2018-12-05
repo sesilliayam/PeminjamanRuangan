@@ -23,7 +23,7 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>#</th>
+                                {{-- <th>#</th> --}}
                                 <th>NIK</th>
                                 <th>Kode Dosen</th>
                                 <th>User ID</th>
@@ -39,7 +39,7 @@
                             @foreach($dosens as $index => $a)
                                 <tr>
                                     <!-- karena dimulai dari 0 -->
-                                    <td>{{($index++)+1}}</td>
+                                    {{-- <td>{{($index++)+1}}</td> --}}
                                     <td>{{$a->nik}}</td>
                                     <td>{{$a->kode_dosen}}</td>
                                     <td>{{$a->user_id}}</td>
@@ -65,6 +65,9 @@
                             </tbody>
                         </table>
                     </div>
+                    
+                    {{-- /untuk pagination --}}
+                    {{$dosens->links()}}
 
                     <div class="form-group">
                         <div class="col-sm-12">

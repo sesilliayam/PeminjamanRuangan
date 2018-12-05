@@ -18,7 +18,8 @@ class ControllerHimpunan extends Controller
      */
     public function index()
     {
-        $himpunans = DB::table('himpunans')->paginate(10);
+        // $himpunans = DB::table('himpunans')->paginate(10);
+        $himpunans = Himpunan::paginate(10);
         return view('contents.himpunan.daftarhimpunan', compact('himpunans'));
     }
 

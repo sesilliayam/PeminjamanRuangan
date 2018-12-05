@@ -19,7 +19,8 @@ class ControllerKelas extends Controller
      */
     public function index()
     {
-        $kelas = DB::table('kelas')->paginate(10);
+        // $kelas = DB::table('kelas')->paginate(10);
+        $kelas = Kelas::paginate(10);
         return view('contents.kelas.daftarkelas', compact('kelas'));
     }
 
