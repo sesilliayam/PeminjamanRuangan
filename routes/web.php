@@ -69,3 +69,8 @@ Route::resource('lab', 'ControllerLab');
 
 //buat HIMPUNAN
 Route::resource('himpunan', 'ControllerHimpunan');
+
+//buat HISTORI
+
+//buat KELAS
+Route::resource('kelas','ControllerKelas');

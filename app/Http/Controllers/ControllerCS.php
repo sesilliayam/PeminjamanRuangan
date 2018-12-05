@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 
-use App\Dosen;
-use App\Laboratorium;
-
-class ControllerLab extends Controller
+class ControllerCS extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +13,7 @@ class ControllerLab extends Controller
      */
     public function index()
     {
-        $laboratoria = DB::table('laboratoria')->paginate(10);
-        return view('contents.lab.daftarlab', compact('laboratoria'));
+        //
     }
 
     /**
@@ -29,9 +23,7 @@ class ControllerLab extends Controller
      */
     public function create()
     {
-        //mengembalikan view
-        $dosen = Dosen::where('nik', '<>', '')->get();
-        return view('contents.lab.tambahlab', compact('dosen'));
+        //
     }
 
     /**
@@ -42,9 +34,7 @@ class ControllerLab extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Laboratorium::create($data);
-        return redirect()->route('lab.index')->with(['msg' => 'Berhasil Menambahkan Data Lab']);
+        //
     }
 
     /**

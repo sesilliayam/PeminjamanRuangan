@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaksi extends Model
+class Transaksi_Peminjaman extends Model
 {
-    //transaksis = nama tabelnya
-    protected $table = "transaksis";
-    //fillable = batasan nilai yang diisikan
+    // transaksi_peminjamen = nama tabelnya
+    protected $table = "transaksi__peminjamen";
+    // fillable = batasan nilai yang diisikan
     protected $fillable = [
         'id_pemesan',
         'no_hp',

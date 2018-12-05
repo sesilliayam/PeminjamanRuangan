@@ -1,8 +1,8 @@
 @extends('layouts.master_layout')
 
-@section('page_title','Halaman Daftar Dosen')
+@section('page_title','Halaman Daftar Kelas ')
 
-@section('title','Daftar Dosen - Peminjaman Ruangan')
+@section('title','Daftar Kelas - Peminjaman Ruangan')
 
 @section('content')
     <!-- Start Page Content -->
@@ -17,42 +17,36 @@
                             {{ session()->get('msg') }}
                         </div>
                     @endif
-                    <h4 class="card-title">Daftar Dosen</h4>
+
+                    
+                    <h4 class="card-title">Daftar Kelas FRI</h4>
                     <!-- <h6 class="card-subtitle">Add class <code>.table</code></h6> -->
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>#</th>
-                                <th>NIK</th>
-                                <th>Kode Dosen</th>
-                                <th>User ID</th>
+                                <th>ID</th>
                                 <th>Nama</th>
-                                <th>Jurusan</th>
-                                <th>Date Created</th>
-                                <th>Action
+                                <th>Dosen Wali</th>
                                 </td>
                             </tr>
                             </thead>
                             <tbody>
                             <!-- index bernilai a dimana a itu dimulai dari 0 -->
-                            @foreach($dosens as $index => $a)
+                            @foreach($kelas as $index => $a)
                                 <tr>
                                     <!-- karena dimulai dari 0 -->
-                                    <td>{{($index++)+1}}</td>
-                                    <td>{{$a->nik}}</td>
-                                    <td>{{$a->kode_dosen}}</td>
-                                    <td>{{$a->user_id}}</td>
+                                    {{-- <td>{{($index++)+1}}</td> --}}
+                                    <td>{{$a->id}}</td>
                                     <td>{{$a->nama}}</td>
-                                    <td>{{$a->jurusan}}</td>
-                                    <td>{{$a->created_at}}</td>
+                                    <td>{{$a->id_dosenwali}}</td>
                                     <td>
                                         <!-- BUTTON EDIT-->
                                         <div class="btn-group">
-                                            <form action="{{ route('dosen.destroy', $a->id) }}" method="post">
+                                            <form action="{{ route('kelas.destroy', $a->id) }}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <a href="{{route('dosen.edit', $a->id)}}" class="btn btn-info btn-xs tip" title="Edit"><i
+                                                <a href="{{route('kelas.edit', $a->id)}}" class="btn btn-info btn-xs tip" title="Edit"><i
                                                         class="fa fa-pencil"></i></a>
                                                 <button type="submit" class="btn btn-danger btn-xs tip" title="Delete"><i
                                                         class="fa fa-trash-o"></i></button>
@@ -68,7 +62,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <a class="btn btn-success" href="{{route('dosen.create')}}">Tambah Dosen</a>
+                            <a class="btn btn-success" href="{{route('kelas.create')}}">Tambah Kelas</a>
                         </div>
                     </div>
 

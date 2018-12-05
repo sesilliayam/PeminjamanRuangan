@@ -104,18 +104,18 @@
             change: false,
             rows: {
                 '1': {
-                    title: 'Title Area',
+                    title: 'KU2.01.02',
                     schedule: [
                         {
                             start: '09:00',
                             end: '12:00',
-                            text: 'Text Area',
+                            text: 'Waiting Approval',
                             data: {}
                         },
                         {
                             start: '11:00',
                             end: '14:00',
-                            text: 'Text Area',
+                            text: 'Approved',
                             data: {}
                         }
                     ]

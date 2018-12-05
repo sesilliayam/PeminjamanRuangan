@@ -73,7 +73,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                © 2018 WADSIP SI-40-01 using Monster Admin by wrappixel.com
+                © 2018 ART, RIN, SIL using Monster Admin by wrappixel.com
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->

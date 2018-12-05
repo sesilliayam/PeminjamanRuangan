@@ -39,7 +39,7 @@
                                         <div class="form-group">
                                             <div class="col-sm-12">
                                                 {{--  --}}
-                                            <input type="submit" class="btn btn-success" type="submit" value="Tambah Laboratorium">
+                                            <input type="submit" class="btn btn-success" type="submit" value="Tambah Himpunan">
                                             </div>
                                         </div>
 

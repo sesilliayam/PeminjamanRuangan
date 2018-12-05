@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
+//model yang dipakai
+use App\Kelas;
 use App\Dosen;
-use App\Laboratorium;
 
-class ControllerLab extends Controller
+class ControllerKelas extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +19,8 @@ class ControllerLab extends Controller
      */
     public function index()
     {
-        $laboratoria = DB::table('laboratoria')->paginate(10);
-        return view('contents.lab.daftarlab', compact('laboratoria'));
+        $kelas = DB::table('kelas')->paginate(10);
+        return view('contents.kelas.daftarkelas', compact('kelas'));
     }
 
     /**
@@ -31,7 +32,7 @@ class ControllerLab extends Controller
     {
         //mengembalikan view
         $dosen = Dosen::where('nik', '<>', '')->get();
-        return view('contents.lab.tambahlab', compact('dosen'));
+        return view('contents.kelas.tambahkelas', compact('dosen'));
     }
 
     /**
@@ -43,8 +44,8 @@ class ControllerLab extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Laboratorium::create($data);
-        return redirect()->route('lab.index')->with(['msg' => 'Berhasil Menambahkan Data Lab']);
+        Kelas::create($data);
+        return redirect()->route('kelas.index')->with(['msg' => 'Berhasil Menambahkan Kelas']);
     }
 
     /**

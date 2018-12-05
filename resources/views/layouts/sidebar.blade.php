@@ -4,10 +4,10 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
-                <li>
+                {{-- <li>
                     <a href="{{route('home')}}" class="waves-effect"><i class="fa fa-clock-o m-r-10"
                                                                         aria-hidden="true"></i>Dashboard</a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/profile" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Profile</a>
                 </li>
@@ -17,10 +17,10 @@
                                                                                 aria-hidden="true"></i>Lihat Jadwal</a>
                 </li>
 
-                <li>
-                    <a href="/histori" class="waves-effect"><i class="fa fa-history m-r-10" aria-hidden="true"></i>Histori
+                {{-- <li>
+                    <a href="{{route('jadwal.index')}}" class="waves-effect"><i class="fa fa-history m-r-10" aria-hidden="true"></i>Histori
                         Peminjaman</a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="{{route('ruangan.index')}}" class="waves-effect"><i class="fa fa-home m-r-10"
@@ -57,6 +57,18 @@
                         </li>
 
                         <li>
+                            <a class="" href="#">
+                                <span class="fa fa-male">&nbsp;</span> Data Cleaning Service
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="" href="{{route('kelas.index')}}">
+                                <span class="fa fa-fort-awesome">&nbsp;</span> Daftar Kelas
+                            </a>
+                        </li>
+
+                        <li>
                         <a href="{{route('lab.index')}}" class="waves-effect"><i class="fa fa-bookmark-o m-r-10" aria-hidden="true"></i>Daftar
                                 Laboratorium</a>
                         </li>
@@ -69,7 +81,7 @@
                             <span class="fa fa-arrow-right">&nbsp;</span> Sub Item 3
                         </a></li> -->
                     </ul>
-                <li><a class="waves-effect" href="{{ route('logout') }}"
+                {{-- <li><a class="waves-effect" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                         <em class="fa fa-power-off">&nbsp;</em> Logout
@@ -78,7 +90,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                </li>
+                </li> --}}
                 </li>
 
             </ul>

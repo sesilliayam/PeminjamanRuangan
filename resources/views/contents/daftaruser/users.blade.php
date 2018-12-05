@@ -24,7 +24,8 @@
                                     <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>#</th>
+                                                {{-- <th>#</th> --}}
+                                                <th>User_ID</th>
                                                 <th>Name</th>
                                                 <th>Email</th>
                                                 <th>Role</th>
@@ -38,7 +39,8 @@
                                             @foreach($users as $index => $a)
                                             <tr>
                                                 <!-- karena dimulai dari 0 -->
-                                                <td>{{($index++)+1}}</td>
+                                                {{-- <td>{{($index++)+1}}</td> --}}
+                                                <td>{{$a->id}}</td>
                                                 <td>{{$a->name}}</td>
                                                 <td>{{$a->email}}</td>
                                                 <td>{{$a->role}}</td>

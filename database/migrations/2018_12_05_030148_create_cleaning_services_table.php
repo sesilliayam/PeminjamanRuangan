@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMahasiswasTable extends Migration
+class CreateCleaningServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,14 @@ class CreateMahasiswasTable extends Migration
      */
     public function up()
     {
-        Schema::create('mahasiswas', function (Blueprint $table) {
+        Schema::create('cleaning_services', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('nim');
+            $table->integer('nip');
             $table->string('nama');
             $table->integer('user_id')->unsigned();
-            $table->string('jurusan');
-            $table->string('himpunan');
-            $table->integer('laboratorium_id')->unsigned();
-            $table->integer('kelas_id')->unsigned()->nullable();
             $table->timestamps();
 
-            //buat foreign key
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('laboratorium_id')->references('id')->on('laboratoria');
-            $table->foreign('kelas_id')->references('id')->on('kelas');
         });
     }
 
@@ -38,6 +31,6 @@ class CreateMahasiswasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mahasiswas');
+        Schema::dropIfExists('cleaning_services');
     }
 }
