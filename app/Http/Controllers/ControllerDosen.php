@@ -34,7 +34,7 @@ class ControllerDosen extends Controller
     {
         //mengembalikan view
         //mengambalikan view yang role nya selain admin
-        $user = User::where('role', '<>', 'admin')->get();
+        $user = User::where('status', '=', 'Dosen')->get();
         return view('contents.datadosen.tambahdosen', compact('user'));
     }
 
@@ -72,7 +72,6 @@ class ControllerDosen extends Controller
      */
     public function edit(Dosen $dosen)
     {
-        // $user = User::where('role', '<>', 'admin')->get();
         return view('contents.datadosen.editdosen', compact('dosen'));
     }
 

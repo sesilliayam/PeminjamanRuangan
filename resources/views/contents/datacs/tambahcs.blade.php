@@ -28,7 +28,7 @@
                         <div class="form-group">
                             <label class="col-md-12">Nama Pegawai</label>
                             <div class="col-md-12">
-                                <input type="text" name="nama" placeholder="Contoh: Edi Sutoyo"
+                                <input type="text" name="nama" placeholder="Contoh: Plankton Sniff"
                                        class="form-control form-control-line">
                             </div>
                         </div>

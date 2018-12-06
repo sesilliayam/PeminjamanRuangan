@@ -26,7 +26,7 @@ class CreateTransaksiPeminjamenTable extends Migration
             $table->string('status')->nullable();
             $table->timestamps();
 
-            $table->foreign('id_pemesan')->references('id')->on('penggunas');
+            $table->foreign('id_pemesan')->references('id')->on('users');
             $table->foreign('id_ruangan')->references('id')->on('ruangans');
         });
     }

@@ -30,7 +30,7 @@ class ControllerLab extends Controller
     public function create()
     {
         //mengembalikan view
-        $dosen = Dosen::where('nik', '<>', '')->get();
+        $dosen = Dosen::all();
         return view('contents.lab.tambahlab', compact('dosen'));
     }
 
@@ -64,9 +64,10 @@ class ControllerLab extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Laboratorium $lab)
     {
-        //
+        $dosen = Dosen::all();
+        return view('contents.lab.editlab', compact('lab', 'dosen'));
     }
 
     /**
@@ -76,9 +77,13 @@ class ControllerLab extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Laboratorium $lab)
     {
-        //
+        $lab->update([
+            'nama' => $request['nama'],
+            'dosen_id' => $request['dosen_id']
+        ]);
+        return redirect()->route('lab.index')->with(['msg' => 'Berhasil Mengubah Informasi Lab']);
     }
 
     /**
@@ -87,8 +92,9 @@ class ControllerLab extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Laboratorium $lab)
     {
-        //
+        $lab->delete();
+        return back()->with(['msg' => 'Berhasil Menghapus Lab']);
     }
 }

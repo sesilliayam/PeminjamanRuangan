@@ -38,6 +38,7 @@ Route::get('/login', function () {
 //buat user
 Route::resource('halamanuser','UsersController');
 
+//buat TRANSAKSI
 Route::resource('jadwal','ControllerTransaksi');
 
 

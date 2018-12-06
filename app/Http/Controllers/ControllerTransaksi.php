@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use App\Transaksi_Peminjaman;
 use Illuminate\Http\Request;
 
+use App\Ruangan;
+use App\User;
+// Use App\Himpunan;
+// Use App\Laboratorium;
+
 class ControllerTransaksi extends Controller
 {
     /**
@@ -26,7 +31,8 @@ class ControllerTransaksi extends Controller
      */
     public function create()
     {
-        
+        $user = User::where('role', '<>', 'admin')->get();
+        $ruangan = Ruangan::all();    
     }
 
     /**

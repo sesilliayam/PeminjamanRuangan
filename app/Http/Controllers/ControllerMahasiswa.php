@@ -37,7 +37,7 @@ class ControllerMahasiswa extends Controller
      */
     public function create()
     {
-        $user = User::where('role', '<>', 'admin')->get();
+        $user = User::where('status', '=', 'Mahasiswa')->get();
         $himpunan = Himpunan::all();
         $laboratorium = Laboratorium::all();
         $kelas = Kelas::all();

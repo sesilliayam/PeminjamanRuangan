@@ -62,7 +62,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <a class="btn btn-success" href="{{route('himpunan.create')}}">Tambah Lab</a>
+                            <a class="btn btn-success" href="{{route('himpunan.create')}}">Tambah Himpunan</a>
                         </div>
                     </div>
 

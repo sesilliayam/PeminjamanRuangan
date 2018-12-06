@@ -84,7 +84,7 @@
     <!-- ============================================================== -->
     <!-- End PAge Content -->
 @endsection
-
+{{-- 
 @push('js')
     <script src="{{ asset('plugins/scheduler/js/jquery-migrate.min.js') }}"></script>
     <script src="{{ asset('plugins/scheduler/js/jquery-ui.js') }}"></script>
@@ -148,11 +148,11 @@
                     }
                 });
             },
-            // append: function(node,data){
-            // },
-            // time_click: function(time,data){
-            // console.log(data.data.id);
-            // },
+            append: function(node,data){
+            },
+            time_click: function(time,data){
+            console.log(data.data.id);
+            },
         });
     </script>
-@endpush
+@endpush --}}

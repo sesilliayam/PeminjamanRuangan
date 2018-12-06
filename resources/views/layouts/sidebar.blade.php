@@ -8,9 +8,9 @@
                     <a href="{{route('home')}}" class="waves-effect"><i class="fa fa-clock-o m-r-10"
                                                                         aria-hidden="true"></i>Dashboard</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="/profile" class="waves-effect"><i class="fa fa-user m-r-10" aria-hidden="true"></i>Profile</a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a href="{{route('jadwal.index')}}" class="waves-effect"><i class="fa fa-table m-r-10"

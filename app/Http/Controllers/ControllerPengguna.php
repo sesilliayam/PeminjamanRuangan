@@ -102,15 +102,4 @@ class ControllerPengguna extends Controller
 
         return back()->with(['msg' => 'Berhasil Menghapus User']);
     }
-
-    // //ditambahin sendiri
-    // public function panggildatauser()
-    // {
-    //     $users = DB::table('Penggunas')->paginate(10);
-    //     return view('contents.daftaruser.users', ['users' => $users]);
-    // }
-
-    // public function tambahuser(){
-    //     return view('contents.daftaruser.tambahuser');
-    // }
 }

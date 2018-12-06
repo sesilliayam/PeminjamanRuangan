@@ -5,7 +5,7 @@
 @section('title','Dashboard - Peminjaman Ruangan')
 
 @section('content')
-<p>Ini bodynya si Dashboard</p>
+<p>Halo, Selamat datang di Web Peminjaman Ruangan!</p>
 @endsection
 
 @if (session('status'))
