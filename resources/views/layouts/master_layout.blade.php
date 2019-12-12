@@ -58,7 +58,7 @@
                         <div class="card">
                             <div class="card-block">
                                 @yield('content')
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>

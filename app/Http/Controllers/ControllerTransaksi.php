@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Transaksi_Peminjaman;
+use App\Peminjaman;
 use Illuminate\Http\Request;
 
 use App\Ruangan;
@@ -20,7 +20,7 @@ class ControllerTransaksi extends Controller
     public function index()
     {
         //mengambil semua data dari tabel Transaksi
-        $data = Transaksi_Peminjaman::all();
+        $data = Peminjaman::all();
         return view('contents.lihatjadwal.jadwal',compact(['data']));
     }
 

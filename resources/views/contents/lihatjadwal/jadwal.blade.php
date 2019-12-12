@@ -55,12 +55,12 @@
                                     {{-- <td>{{$a->status}}</td> --}}
                                     <td>
                                         <!-- BUTTON EDIT-->
-                                        <div class="btn-group">
+                                        {{-- <div class="btn-group">
                                             <a href="#" class="btn btn-info btn-xs tip" title="Add New"><i
                                                     class="fa fa-pencil"></i></a>
                                             <a href="#" class="btn btn-danger btn-xs tip" title="Add New"><i
                                                     class="fa fa-trash-o"></i></a>
-                                        </div>
+                                        </div> --}}
 
                                     </td>
                                 </tr>
@@ -69,13 +69,13 @@
                         </table>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <div class="col-sm-12">
                             <a href="tambahuser">
                                 <button class="btn btn-success">Tambah Jadwal</button>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

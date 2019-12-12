@@ -102,4 +102,9 @@ class ControllerMahasiswa extends Controller
     {
         //
     }
+
+    //harusnya nanti dikasih parameter id yang mau di show
+    public function showDetail(){
+        
+    }
 }

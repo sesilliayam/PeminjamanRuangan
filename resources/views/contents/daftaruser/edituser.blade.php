@@ -20,7 +20,7 @@
                                     {{-- token untuk form laravel --}}
                                     <div class="form-group">
                                         <label class="col-md-12">Nama</label>
-                                        <div class="col-md-12">
+                                        <div class="col-md-12"> 
                                             <input type="text" name="name" placeholder="Johnathan Doe" class="form-control form-control-line" value="{{ $user->name }}" required>
                                         </div>
                                     </div>
